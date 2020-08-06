@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: httpd
+spec:
+  serviceName: mongo
+  selector:
+    matchLabels:
+      app: httpd
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: httpd
+    spec:
+      containers:
+      - image: httpd
+        name: mongo
+        ports:
+        - containerPort: 80
+      restartPolicy: Always
+      volumes:

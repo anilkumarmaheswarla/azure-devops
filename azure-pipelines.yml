@@ -1,10 +1,5 @@
-- task: Docker@2
+- task: KubernetesManifest@0
   inputs:
-    command: 'build'
-    Dockerfile: '**/Dockerfile'
-    tags: '$(tag)'
-    - task: KubernetesManifest@0
-      inputs:
-        action: 'deploy'
-        kubernetesServiceConnection: 'Sample Kubernetes'
-        manifests: 'httpd.yaml'
+    action: 'deploy'
+    kubernetesServiceConnection: 'Sample Kubernetes'
+    manifests: 'httpd.yaml'

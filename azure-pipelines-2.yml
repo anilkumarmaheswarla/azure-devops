@@ -26,5 +26,5 @@ steps:
 - task: KubernetesManifest@0
   inputs:
     action: 'deploy'
-    kubernetesServiceConnection: 'Sample Kubernetes'
+    kubernetesServiceConnection: 'SST Cluster'
     manifests: 'httpd.yaml'

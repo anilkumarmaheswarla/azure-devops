@@ -31,12 +31,13 @@ steps:
     action: 'deploy'
     kubernetesServiceConnection: 'SST Cluster'
     manifests: 'httpd.yaml'
+    imagePullSecrets: 'regcred'
 
-- task: Kubernetes@1
-  inputs:
-    connectionType: 'Kubernetes Service Connection'
-    kubernetesServiceEndpoint: 'SST Cluster'
-    command: 'set'
-    arguments: 'image sts httpd mongo=atharvatest:$(Build.BuildId)'
-    secretType: 'dockerRegistry'
-    containerRegistryType: 'Azure Container Registry'
+# - task: Kubernetes@1
+#   inputs:
+#     connectionType: 'Kubernetes Service Connection'
+#     kubernetesServiceEndpoint: 'SST Cluster'
+#     command: 'set'
+#     arguments: 'image sts httpd mongo=atharvatest:$(Build.BuildId)'
+#     secretType: 'dockerRegistry'
+#     containerRegistryType: 'Azure Container Registry'

@@ -14,7 +14,7 @@ spec:
         app: httpd
     spec:
       containers:
-      - image: containerregistryyRg6XT/atharvatest:$(Build.BuildId)
+      - image: containerregistryyRg6XT/atharvatest:7
         name: mongo
         ports:
         - containerPort: 80

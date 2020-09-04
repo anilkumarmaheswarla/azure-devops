@@ -41,3 +41,23 @@ stages:
             containerRegistryType: 'Container Registry'
             dockerRegistryEndpoint: 'ACR Registry'
             secretName: 'regcred'
+
+- stage: Get Info
+  displayName: Deploy image
+  jobs:  
+  - job: GetInfo
+    displayName: Deploy
+    pool:
+      vmImage: 'ubuntu-latest'
+    steps:
+        - task: Kubernetes@1
+          inputs:
+            connectionType: 'Kubernetes Service Connection'
+            kubernetesServiceEndpoint: 'SST Cluster'
+            namespace: 'dev'
+            command: 'get'
+            arguments: 'pods'
+            secretType: 'dockerRegistry'
+            containerRegistryType: 'Container Registry'
+            dockerRegistryEndpoint: 'ACR Registry'
+            secretName: 'regcred'

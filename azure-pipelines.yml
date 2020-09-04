@@ -43,7 +43,7 @@ stages:
             secretName: 'regcred'
 
 - stage: GetInfo
-  displayName: Deploy image
+  displayName: GetInfo
   jobs:  
   - job: GetInfo
     displayName: GetInfo

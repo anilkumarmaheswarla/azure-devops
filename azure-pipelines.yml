@@ -42,7 +42,7 @@ stages:
             dockerRegistryEndpoint: 'ACR Registry'
             secretName: 'regcred'
 
-- stage: Get Info
+- stage: GetInfo
   displayName: Deploy image
   jobs:  
   - job: GetInfo

@@ -22,6 +22,7 @@ stages:
             repository: 'atharva'
             command: 'buildAndPush'
             Dockerfile: '**/Dockerfile'
+            
 - stage: Deploy
   displayName: Deploy image
   jobs:  

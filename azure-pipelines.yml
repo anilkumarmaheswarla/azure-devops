@@ -37,7 +37,7 @@ stages:
             kubernetesServiceEndpoint: 'SST Cluster'
             namespace: 'dev'
             command: 'set'
-            arguments: 'image deployment httpd httpd=containerregistryyrg6xt.azurecr.io/atharva:$(Build.BuildId)'
+            arguments: 'image deployment httpd httpd=containerregistryztbm5b.azurecr.io/atharva:$(Build.BuildId)'
             secretType: 'dockerRegistry'
             containerRegistryType: 'Container Registry'
             dockerRegistryEndpoint: 'ACR Registry'

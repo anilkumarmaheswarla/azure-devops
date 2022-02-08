@@ -18,8 +18,8 @@ stages:
     steps:
         - task: Docker@2
           inputs:
-            containerRegistry: 'ACR Registry'
-            repository: 'atharva'
+            containerRegistry: 'akscrfordevops'
+            repository: 'azure-devops'
             command: 'buildAndPush'
             Dockerfile: '**/Dockerfile'
             
@@ -34,7 +34,7 @@ stages:
         - task: Kubernetes@1
           inputs:
             connectionType: 'Kubernetes Service Connection'
-            kubernetesServiceEndpoint: 'SST Cluster'
+            kubernetesServiceEndpoint: 'anilk8srg-aks'
             namespace: 'dev'
             command: 'set'
             arguments: 'image deployment httpd httpd=containerregistryztbm5b.azurecr.io/atharva:$(Build.BuildId)'
@@ -54,7 +54,7 @@ stages:
         - task: Kubernetes@1
           inputs:
             connectionType: 'Kubernetes Service Connection'
-            kubernetesServiceEndpoint: 'SST Cluster'
+            kubernetesServiceEndpoint: 'anilk8srg-aks'
             namespace: 'dev'
             command: 'get'
             arguments: 'pods'
